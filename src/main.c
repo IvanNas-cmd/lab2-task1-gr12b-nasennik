@@ -175,3 +175,43 @@ void print_nearest_birthday(struct FOOTBALL players[], int n)
 
 		printf("\nNearest birthday: %s\n", players[index].surname);
 }
+
+int main()
+{
+		int class1[SIZE];
+		int class2[SIZE];
+		int i;
+
+		printf("Enter heights for class 1:\n");
+		for (i = 0; i < SIZE; i++)
+				scanf("%d", &class1[i]);
+
+		printf("Enter heights for class 2:\n");
+		for (i = 0; i < SIZE; i++)
+				scanf("%d", &class2[i]);
+
+		int third1 = third_max(class1, SIZE);
+		int third2 = third_max(class2, SIZE);
+
+		printf("\nThird tallest in class 1: %d\n", third1);
+		printf("Third tallest in class 2: %d\n", third2);
+
+		if (third1 > third2)
+				printf("Class 1 has taller third student\n");
+		else if (third2 > third1)
+				printf("Class 2 has taller third student\n");
+		else
+				printf("They are equal\n");
+
+		struct FOOTBALL players[MAX_PLAYERS];
+		int n;
+
+		input_players(players, &n);
+
+		print_effective(players, n);
+		print_city(players, n);
+		print_youngest(players, n);
+		print_nearest_birthday(players, n);
+
+		return 0;
+}
