@@ -141,3 +141,37 @@ void print_youngest(struct FOOTBALL players[], int n)
 
 		printf("\nYoungest player: %s\n", players[index].surname);
 }
+
+int days_until_birthday(int day, int month)
+{
+		time_t t = time(NULL);
+		struct tm *current = localtime(&t);
+
+		int current_day = current->tm_mday;
+		int current_month = current->tm_mon + 1;
+
+		int days = (month - current_month) * 30 + (day - current_day);
+
+		if (days < 0)
+				days += 365;
+
+		return days;
+}
+
+void print_nearest_birthday(struct FOOTBALL players[], int n)
+{
+		int i, index = 0;
+		int min_days = days_until_birthday(players[0].day, players[0].month);
+
+		for (i = 1; i < n; i++)
+		{
+				int d = days_until_birthday(players[i].day, players[i].month);
+				if (d < min_days)
+				{
+						min_days = d;
+						index = i;
+				}
+		}
+
+		printf("\nNearest birthday: %s\n", players[index].surname);
+}
