@@ -22,3 +22,26 @@ struct FOOTBALL
 		int goals;
 		char birthplace[30];
 };
+
+void sort_desc(int arr[], int size)
+{
+		int i, j, temp;
+		for (i = 0; i < size - 1; i++)
+		{
+				for (j = i + 1; j < size; j++)
+				{
+						if (arr[i] < arr[j])
+						{
+								temp = arr[i];
+								arr[i] = arr[j];
+								arr[j] = temp;
+						}
+				}
+		}
+}
+
+int third_max(int arr[], int size)
+{
+		sort_desc(arr, size);
+		return arr[2];
+}
