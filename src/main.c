@@ -78,3 +78,38 @@ void input_players(struct FOOTBALL players[], int *n)
 				scanf("%s", players[i].birthplace);
 		}
 }
+
+int calculate_age(int day, int month, int year)
+{
+		time_t t = time(NULL);
+		struct tm *current = localtime(&t);
+
+		int age = current->tm_year + 1900 - year;
+
+		if ((month > current->tm_mon + 1) ||
+				(month == current->tm_mon + 1 && day > current->tm_mday))
+		{
+				age--;
+		}
+
+		return age;
+}
+
+void print_effective(struct FOOTBALL players[], int n)
+{
+		int i;
+		printf("\nPlayers older than 20 and >=0.4 goals per game:\n");
+
+		for (i = 0; i < n; i++)
+		{
+				int age = calculate_age(players[i].day, players[i].month, players[i].year);
+				if (age > 20 && players[i].games > 0)
+				{
+						double ratio = (double)players[i].goals / players[i].games;
+						if (ratio >= 0.4)
+						{
+								printf("%s\n", players[i].surname);
+						}
+				}
+		}
+}
