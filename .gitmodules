@@ -1,3 +1,6 @@
 [submodule "tpmp-lab2-task3"]
 	path = tpmp-lab2-task3
 	url = https://github.com/IvanNas-cmd/tpmp-lab2-task3.git
+[submodule "tpmp-lab2-task4"]
+	path = tpmp-lab2-task4
+	url = https://github.com/IvanNas-cmd/tpmp-lab2-task4.git
