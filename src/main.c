@@ -45,3 +45,36 @@ int third_max(int arr[], int size)
 		sort_desc(arr, size);
 		return arr[2];
 }
+
+void input_players(struct FOOTBALL players[], int *n)
+{
+		int i;
+		printf("Enter number of players (max 12): ");
+		scanf("%d", n);
+
+		if (*n > MAX_PLAYERS)
+				*n = MAX_PLAYERS;
+
+		for (i = 0; i < *n; i++)
+		{
+				printf("\nPlayer %d\n", i + 1);
+
+				printf("Surname: ");
+				scanf("%s", players[i].surname);
+
+				printf("Birth day month year: ");
+				scanf("%d %d %d", &players[i].day, &players[i].month, &players[i].year);
+
+				printf("Role: ");
+				scanf("%s", players[i].role);
+
+				printf("Games: ");
+				scanf("%d", &players[i].games);
+
+				printf("Goals: ");
+				scanf("%d", &players[i].goals);
+
+				printf("Birthplace: ");
+				scanf("%s", players[i].birthplace);
+		}
+}
