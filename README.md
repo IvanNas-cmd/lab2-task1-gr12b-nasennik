@@ -1,11 +1,12 @@
-# Overview
+# Лабораторная работа №2
 
-It is public template of assignment `"labrabota 3"` for FPMI students
+## Overview
+Данная работа посвящена автоматизации разработки консольных приложений на языке C.
+**Исполнитель:** Nasennik Ivan
+**Группа:** 12b
 
-# Usage
+## Usage
+Программа запускается из консоли. В качестве аргументов передаются числа.
 
-Please, edit README and add some details, as instance **{add your last name, first name and group number}**.
-
-# Building
-
-Please, import repository and use for repl.it project, which is defined in the assignment "labrabota 3".
+## Building
+Проект собирается с помощью GCC. Настройки компиляции прописаны в файле .replit.
