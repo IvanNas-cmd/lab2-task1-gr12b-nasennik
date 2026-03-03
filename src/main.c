@@ -113,3 +113,31 @@ void print_effective(struct FOOTBALL players[], int n)
 				}
 		}
 }
+
+void print_city(struct FOOTBALL players[], int n)
+{
+		int i;
+		printf("\nPlayers born in Brest or Minsk:\n");
+
+		for (i = 0; i < n; i++)
+		{
+				if (strcmp(players[i].birthplace, "Brest") == 0 ||
+						strcmp(players[i].birthplace, "Minsk") == 0)
+				{
+						printf("%s\n", players[i].surname);
+				}
+		}
+}
+
+void print_youngest(struct FOOTBALL players[], int n)
+{
+		int i, index = 0;
+
+		for (i = 1; i < n; i++)
+		{
+				if (players[i].year > players[index].year)
+						index = i;
+		}
+
+		printf("\nYoungest player: %s\n", players[index].surname);
+}
