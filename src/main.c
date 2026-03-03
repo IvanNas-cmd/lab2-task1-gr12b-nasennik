@@ -1,8 +1,24 @@
-/* hello.c */
+/*
+ * Автор: Насенник Иван
+ * Группа: 12б
+ * Лабораторная работа №2
+ * Программа для Варианта 17
+ */
 #include <stdio.h>
+#include <string.h>
+#include <time.h>
 
-void main (void)
+#define SIZE 23
+#define MAX_PLAYERS 12
+
+struct FOOTBALL
 {
-	printf ("Hello World\n");
-	printf ("Goodbye World\n");
-}
+		char surname[30];
+		int day;
+		int month;
+		int year;
+		char role[30];
+		int games;
+		int goals;
+		char birthplace[30];
+};
